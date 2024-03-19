@@ -1,0 +1,10 @@
+{
+  "@@locale": "ru",
+  "appTitle": "Dart and Flutter примеры",
+
+  "@customPainter": {
+    "description": "Пример для CustomPainter"
+  },
+  "customPainterTitle": "CustomPainter",
+  "customLinearIndicatorTitle": "Кастомный линейный индикатор"
+}

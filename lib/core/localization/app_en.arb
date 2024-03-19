@@ -1,0 +1,10 @@
+{
+  "@@locale": "en",
+  "appTitle": "Dart and Flutter examples",
+
+  "@customPainter": {
+    "description": "Example for CustomPainter"
+  },
+  "customPainterTitle": "CustomPainter",
+  "customLinearIndicatorTitle": "Custom Linear Indicator"
+}
