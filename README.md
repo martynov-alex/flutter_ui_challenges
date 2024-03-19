@@ -1,6 +1,6 @@
 # Flutter UI Challenges
 
-![Cover Image](./assets/doc/cover.png){width="400px" style="display: block; margin: 0 auto"}
+<p align="center"><img src="./assets/doc/cover.png" alt="Cover" width="400"/></p>
 
 An app with the results of my Flutter UI Challenges.
 
