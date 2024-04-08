@@ -11,4 +11,6 @@ List of source:
 
 List of results:
 
+- **Crypto exchange platform**
+    Layout from Dribble — [Web](https://dribbble.com/shots/19533571-Crypto-exchange-platform) + [Mobile](https://dribbble.com/shots/19625924-Crypto-mobile-wallet)
 - ...
