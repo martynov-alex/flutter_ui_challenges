@@ -1,17 +1,17 @@
-import 'package:flutter_ui_challenges/app/feature/examples/presentation/examples_screen/examples_screen.dart';
+import 'package:flutter_ui_challenges/app/feature/challenges/presentation/examples_screen/challenges_screen.dart';
 import 'package:flutter_ui_challenges/core/routing/not_found_screen.dart';
+import 'package:flutter_ui_challenges/core/routing/routes/crypto_platform_route.dart';
 import 'package:flutter_ui_challenges/core/routing/routes/settings_route.dart';
-import 'package:flutter_ui_challenges/core/routing/routes/streams_example_route.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'app_router.g.dart';
 
 enum AppRoute {
-  customPainter('custom_painter', 'Custom Painter Example'),
-  streams('streams', 'Streams Example'),
-  home('/', 'List of examples'),
-  settings('settings', 'Settings');
+  home('/', 'List of UI Challenges'),
+  settings('settings', 'Settings'),
+  cryptoPlatform('crypto_platform', 'Crypto Platform Layout'),
+  ;
 
   const AppRoute(this.path, this.title);
 
@@ -27,10 +27,10 @@ GoRouter goRouter(GoRouterRef ref) {
       GoRoute(
         path: AppRoute.home.path,
         name: AppRoute.home.name,
-        builder: (context, state) => const ExamplesScreen(),
+        builder: (context, state) => const ChallengesScreen(),
         routes: [
           settingsRoute,
-          streamsExampleRoute,
+          cryptoPlatformRoute,
         ],
       ),
     ],
