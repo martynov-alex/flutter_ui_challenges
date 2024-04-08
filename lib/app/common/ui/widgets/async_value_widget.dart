@@ -1,7 +1,7 @@
-import 'package:flutter_ui_challenges/app/common/constants/app_sizes.dart';
-import 'package:flutter_ui_challenges/core/utils/extensions/theme_x.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_ui_challenges/app/common/constants/app_sizes.dart';
+import 'package:flutter_ui_challenges/core/utils/extensions/theme_x.dart';
 
 class AsyncValueWidget<T> extends StatelessWidget {
   const AsyncValueWidget({
