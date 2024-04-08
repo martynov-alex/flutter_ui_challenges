@@ -12,4 +12,8 @@ class CryptoPlatformColorTheme {
   static const onTertiaryColor = Color(0xFF000000);
   static const onQuaternaryColor = Color(0xFF000000);
   static const onQuinaryColor = Color(0xFFFFFFFF);
+
+  static const positiveIndexColor = Color.fromARGB(255, 102, 147, 113);
+  static const negativeIndexColor = Color.fromARGB(255, 175, 107, 80);
+  static const onIndexColor = Color(0xFFFFFFFF);
 }

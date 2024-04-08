@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
 
 const _britanicaFontFamily = 'Britanica';
+const _britanicaSemiExpandedFontFamily = 'Britanica Semi Expanded';
 
 /// Набор типографии приложения.
 ///
 /// Содержит конкретные текстовые стили для UI-элементов.
-abstract class AppTextStyles {
+abstract class CryptoPlatformTextStyle {
   /// Шрифты с толщиной light
   static final britanicaLight = _BritanicaLight();
 
   /// Шрифты с толщиной regular
   static final britanicaRegular = _BritanicaRegular();
 
-  /// Шрифты с толщиной medium
-  static final britanicaMedium = _BritanicaMedium();
-
   /// Шрифты с толщиной bold
   static final britanicaBold = _BritanicaBold();
+
+  /// Шрифты с толщиной regular
+  static final britanicaSemiExpandedRegular = _BritanicaSemiExpandedRegular();
+
+  /// Шрифты с толщиной bold
+  static final britanicaSemiExpandedBold = _BritanicaSemiExpandedBold();
 }
 
 class _BritanicaLight {
@@ -45,19 +49,6 @@ class _BritanicaRegular {
   );
 }
 
-class _BritanicaMedium {
-  TextStyle size12 = const TextStyle(
-    fontFamily: _britanicaFontFamily,
-    fontWeight: FontWeight.w500,
-    fontSize: 12.0,
-  );
-  TextStyle size14 = const TextStyle(
-    fontFamily: _britanicaFontFamily,
-    fontWeight: FontWeight.w500,
-    fontSize: 14.0,
-  );
-}
-
 class _BritanicaBold {
   TextStyle size12 = const TextStyle(
     fontFamily: _britanicaFontFamily,
@@ -66,6 +57,32 @@ class _BritanicaBold {
   );
   TextStyle size14 = const TextStyle(
     fontFamily: _britanicaFontFamily,
+    fontWeight: FontWeight.w700,
+    fontSize: 14.0,
+  );
+}
+
+class _BritanicaSemiExpandedRegular {
+  TextStyle size12 = const TextStyle(
+    fontFamily: _britanicaSemiExpandedFontFamily,
+    fontWeight: FontWeight.w400,
+    fontSize: 12.0,
+  );
+  TextStyle size14 = const TextStyle(
+    fontFamily: _britanicaSemiExpandedFontFamily,
+    fontWeight: FontWeight.w400,
+    fontSize: 14.0,
+  );
+}
+
+class _BritanicaSemiExpandedBold {
+  TextStyle size12 = const TextStyle(
+    fontFamily: _britanicaSemiExpandedFontFamily,
+    fontWeight: FontWeight.w700,
+    fontSize: 12.0,
+  );
+  TextStyle size14 = const TextStyle(
+    fontFamily: _britanicaSemiExpandedFontFamily,
     fontWeight: FontWeight.w700,
     fontSize: 14.0,
   );

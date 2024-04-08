@@ -46,6 +46,10 @@ flutter:
       - asset: assets/fonts/Britanica/Britanica Light.ttf
       - asset: assets/fonts/Britanica/Britanica Light Italic.ttf
         style: italic
+      - asset: assets/fonts/Britanica/Britanica Regular.ttf
+      - asset: assets/fonts/Britanica/Britanica Bold.ttf
+      - asset: assets/fonts/Britanica/Britanica Semi Expanded Regular.ttf
+      - asset: assets/fonts/Britanica/Britanica Semi Expanded Bold.ttf
 
 # RPS
 # Запуск — $ rps [script_name]

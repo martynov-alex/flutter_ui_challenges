@@ -6,7 +6,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_ui_challenges/app/common/constants/app_sizes.dart';
 import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/domain/crypto_coin.dart';
 import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/presentation/data/crypto_coin_ui_x.dart';
-import 'package:flutter_ui_challenges/core/assets/app_text_styles.dart';
+import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/presentation/theme/crypto_platform_text_style.dart';
+import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/presentation/widgets/crypto_index_change_widget.dart';
 import 'package:flutter_ui_challenges/core/utils/color_utils.dart';
 
 class CryptoCoinWidget extends StatelessWidget {
@@ -42,8 +43,11 @@ class CryptoCoinWidget extends StatelessWidget {
           padding: const EdgeInsets.all(Sizes.p16),
           child: Column(
             mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _Header(coin),
+              const Spacer(),
+              CryptoIndexChangeWidget(indexChange: indexChangePerDay),
             ],
           ),
         ),
@@ -85,7 +89,7 @@ class _Header extends StatelessWidget {
             children: [
               Text(
                 coin.name,
-                style: AppTextStyles.britanicaBold.size14
+                style: CryptoPlatformTextStyle.britanicaBold.size14
                     .copyWith(color: coin.textColor),
                 overflow: TextOverflow.fade,
                 softWrap: false,
@@ -94,7 +98,7 @@ class _Header extends StatelessWidget {
               gapW4,
               Text(
                 coin.ticker,
-                style: AppTextStyles.britanicaRegular.size12
+                style: CryptoPlatformTextStyle.britanicaRegular.size12
                     .copyWith(color: coin.textColor),
               ),
             ],
