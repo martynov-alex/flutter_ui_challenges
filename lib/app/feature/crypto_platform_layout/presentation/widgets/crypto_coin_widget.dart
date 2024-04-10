@@ -1,26 +1,30 @@
 import 'package:decimal/decimal.dart';
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_ui_challenges/app/common/constants/app_sizes.dart';
+import 'package:flutter_ui_challenges/app/common/ui/widgets/svg_icon.dart';
 import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/domain/crypto_coin.dart';
 import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/presentation/data/crypto_coin_ui_x.dart';
 import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/presentation/theme/crypto_platform_text_style.dart';
 import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/presentation/widgets/crypto_index_change_widget.dart';
 import 'package:flutter_ui_challenges/core/utils/color_utils.dart';
+import 'package:flutter_ui_challenges/core/utils/extensions/decimal_x.dart';
 
 class CryptoCoinWidget extends StatelessWidget {
   const CryptoCoinWidget({
     required this.coin,
-    required this.indexChangePerDay,
+    required this.chartData,
     required this.price,
+    required this.indexChangePerDay,
     this.height,
     this.width,
     super.key,
   });
 
   final CryptoCoin coin;
+  final List<FlSpot> chartData;
   final Decimal price;
   final double indexChangePerDay;
   final double? height;
@@ -30,6 +34,7 @@ class CryptoCoinWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final backgroundColor = coin.backgroundColor;
     final textColor = coin.textColor;
+    final chartColor = coin.chartColor;
 
     return SizedBox(
       height: height,
@@ -46,8 +51,21 @@ class CryptoCoinWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _Header(coin),
-              const Spacer(),
-              CryptoIndexChangeWidget(indexChange: indexChangePerDay),
+              gapH8,
+              Expanded(
+                child: _Chart(
+                  chartData: chartData,
+                  chartColor: chartColor,
+                ),
+              ),
+              gapH8,
+              Text(
+                price.format(),
+                style: CryptoPlatformTextStyle.britanicaExpandedBold.size20
+                    .copyWith(color: textColor),
+              ),
+              gapH8,
+              CryptoIndexChangeWidget(indexChangePerDay),
             ],
           ),
         ),
@@ -74,10 +92,7 @@ class _Header extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.all(Sizes.p8),
-              child: SvgPicture.asset(
-                coin.icon,
-                colorFilter: ColorFilter.mode(coin.textColor, BlendMode.srcIn),
-              ),
+              child: SvgIcon(asset: coin.icon, color: coin.textColor),
             ),
           ),
         ),
@@ -105,6 +120,34 @@ class _Header extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class _Chart extends StatelessWidget {
+  const _Chart({required this.chartData, required this.chartColor});
+
+  final List<FlSpot> chartData;
+  final Color chartColor;
+
+  @override
+  Widget build(BuildContext context) {
+    return LineChart(
+      LineChartData(
+        lineBarsData: [
+          LineChartBarData(
+            spots: chartData,
+            color: chartColor,
+            barWidth: 1,
+            isCurved: true,
+            dotData: const FlDotData(show: false),
+          ),
+        ],
+        titlesData: const FlTitlesData(show: false),
+        borderData: FlBorderData(show: false),
+        gridData: const FlGridData(show: false),
+        lineTouchData: const LineTouchData(enabled: false),
+      ),
     );
   }
 }

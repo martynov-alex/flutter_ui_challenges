@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const _britanicaFontFamily = 'Britanica';
 const _britanicaSemiExpandedFontFamily = 'Britanica Semi Expanded';
+const _britanicaExpandedFontFamily = 'Britanica Expanded';
 
 /// Набор типографии приложения.
 ///
@@ -21,6 +22,9 @@ abstract class CryptoPlatformTextStyle {
 
   /// Шрифты с толщиной bold
   static final britanicaSemiExpandedBold = _BritanicaSemiExpandedBold();
+
+  /// Шрифты с толщиной bold
+  static final britanicaExpandedBold = _BritanicaExpandedBold();
 }
 
 class _BritanicaLight {
@@ -85,5 +89,13 @@ class _BritanicaSemiExpandedBold {
     fontFamily: _britanicaSemiExpandedFontFamily,
     fontWeight: FontWeight.w700,
     fontSize: 14.0,
+  );
+}
+
+class _BritanicaExpandedBold {
+  TextStyle size20 = const TextStyle(
+    fontFamily: _britanicaExpandedFontFamily,
+    fontWeight: FontWeight.w700,
+    fontSize: 20.0,
   );
 }

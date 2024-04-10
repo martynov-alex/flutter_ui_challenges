@@ -36,7 +36,7 @@ extension CryptoCoinUIX on CryptoCoin {
         CryptoCoin.bitcoin => CryptoPlatformColorTheme.onPrimaryColor,
         CryptoCoin.dash => CryptoPlatformColorTheme.onTertiaryColor,
         CryptoCoin.dogecoin => CryptoPlatformColorTheme.onSecondaryColor,
-        CryptoCoin.ethereum => CryptoPlatformColorTheme.onQuinaryColor,
+        CryptoCoin.ethereum => CryptoPlatformColorTheme.positiveIndexColor,
         CryptoCoin.ripple => CryptoPlatformColorTheme.onSecondaryColor,
       };
 }

@@ -12,6 +12,7 @@ environment:
 dependencies:
   collection: 1.18.0
   decimal: 2.3.3
+  fl_chart: 0.67.0
   flutter:
     sdk: flutter
   flutter_localizations:
@@ -41,15 +42,21 @@ flutter:
     - assets/vectors/cryptocurrency/
 
   fonts:
-  - family: Britanica
-    fonts:
-      - asset: assets/fonts/Britanica/Britanica Light.ttf
-      - asset: assets/fonts/Britanica/Britanica Light Italic.ttf
-        style: italic
-      - asset: assets/fonts/Britanica/Britanica Regular.ttf
-      - asset: assets/fonts/Britanica/Britanica Bold.ttf
-      - asset: assets/fonts/Britanica/Britanica Semi Expanded Regular.ttf
-      - asset: assets/fonts/Britanica/Britanica Semi Expanded Bold.ttf
+    - family: Britanica
+      fonts:
+        - asset: assets/fonts/Britanica/Britanica Light.ttf
+        - asset: assets/fonts/Britanica/Britanica Light Italic.ttf
+          style: italic
+        - asset: assets/fonts/Britanica/Britanica Regular.ttf
+        - asset: assets/fonts/Britanica/Britanica Bold.ttf
+    - family: Britanica Semi Expanded
+      fonts:
+        - asset: assets/fonts/Britanica/Britanica Semi Expanded Regular.ttf
+        - asset: assets/fonts/Britanica/Britanica Semi Expanded Bold.ttf
+    - family: Britanica Expanded
+      fonts:
+        - asset: assets/fonts/Britanica/Britanica Expanded Bold.ttf
+        - asset: assets/fonts/Britanica/Britanica Expanded Extra Bold.ttf
 
 # RPS
 # Запуск — $ rps [script_name]

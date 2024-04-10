@@ -4,7 +4,7 @@ import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/present
 import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/presentation/theme/crypto_platform_text_style.dart';
 
 class CryptoIndexChangeWidget extends StatelessWidget {
-  const CryptoIndexChangeWidget({super.key, required this.indexChange});
+  const CryptoIndexChangeWidget(this.indexChange, {super.key});
 
   final double indexChange;
 
@@ -12,26 +12,12 @@ class CryptoIndexChangeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final uiData = switch (indexChange) {
       < 0 => (
-          icon: const RotatedBox(
-            quarterTurns: 2,
-            child: Icon(
-              Icons.arrow_outward,
-              size: Sizes.p16,
-              color: CryptoPlatformColorTheme.onIndexColor,
-            ),
-          ),
+          icon: const _ArrowIcon(_IndexChangeType.negative),
           backgroundColor: CryptoPlatformColorTheme.negativeIndexColor,
           sign: '-'
         ),
       _ => (
-          icon: const RotatedBox(
-            quarterTurns: 0,
-            child: Icon(
-              Icons.arrow_outward,
-              size: Sizes.p16,
-              color: CryptoPlatformColorTheme.onIndexColor,
-            ),
-          ),
+          icon: const _ArrowIcon(_IndexChangeType.positive),
           backgroundColor: CryptoPlatformColorTheme.positiveIndexColor,
           sign: '+'
         ),
@@ -52,7 +38,7 @@ class CryptoIndexChangeWidget extends StatelessWidget {
             gapW4,
             Text(
               '${uiData.sign}${indexChange.abs().toStringAsFixed(1)}%',
-              style: CryptoPlatformTextStyle.britanicaSemiExpandedRegular.size14
+              style: CryptoPlatformTextStyle.britanicaBold.size12
                   .copyWith(color: CryptoPlatformColorTheme.onIndexColor),
             ),
             gapW4,
@@ -61,4 +47,32 @@ class CryptoIndexChangeWidget extends StatelessWidget {
       ),
     );
   }
+}
+
+class _ArrowIcon extends StatelessWidget {
+  const _ArrowIcon(this.indexChangeType);
+
+  final _IndexChangeType indexChangeType;
+
+  @override
+  Widget build(BuildContext context) {
+    final quarterTurns = switch (indexChangeType) {
+      _IndexChangeType.positive => 0,
+      _IndexChangeType.negative => 2,
+    };
+
+    return RotatedBox(
+      quarterTurns: quarterTurns,
+      child: const Icon(
+        Icons.arrow_outward,
+        size: Sizes.p16,
+        color: CryptoPlatformColorTheme.onIndexColor,
+      ),
+    );
+  }
+}
+
+enum _IndexChangeType {
+  positive,
+  negative,
 }
