@@ -1,5 +1,4 @@
 import 'package:flutter_ui_challenges/app/feature/challenges/presentation/examples_screen/challenges_screen.dart';
-import 'package:flutter_ui_challenges/core/routing/not_found_screen.dart';
 import 'package:flutter_ui_challenges/core/routing/routes/crypto_platform_route.dart';
 import 'package:flutter_ui_challenges/core/routing/routes/settings_route.dart';
 import 'package:flutter_ui_challenges/core/routing/routes/twitter_embed_card_route.dart';
@@ -36,6 +35,5 @@ GoRouter goRouter(GoRouterRef ref) {
         ],
       ),
     ],
-    errorBuilder: (context, state) => const NotFoundScreen(),
   );
 }
