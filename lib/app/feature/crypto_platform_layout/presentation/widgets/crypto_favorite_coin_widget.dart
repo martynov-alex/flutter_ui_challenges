@@ -12,8 +12,8 @@ import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/present
 import 'package:flutter_ui_challenges/core/utils/color_utils.dart';
 import 'package:flutter_ui_challenges/core/utils/extensions/decimal_x.dart';
 
-class CryptoCoinWidget extends StatelessWidget {
-  const CryptoCoinWidget({
+class CryptoFavoriteCoinWidget extends StatelessWidget {
+  const CryptoFavoriteCoinWidget({
     required this.coin,
     required this.chartData,
     required this.price,
@@ -33,8 +33,8 @@ class CryptoCoinWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final backgroundColor = coin.backgroundColor;
-    final textColor = coin.textColor;
-    final chartColor = coin.chartColor;
+    final textColor = coin.favoriteCoinTextColor;
+    final chartColor = coin.favoriteCoinChartLineColor;
 
     return SizedBox(
       height: height,
@@ -92,7 +92,8 @@ class _Header extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.all(Sizes.p8),
-              child: SvgIcon(asset: coin.icon, color: coin.textColor),
+              child:
+                  SvgIcon(asset: coin.icon, color: coin.favoriteCoinTextColor),
             ),
           ),
         ),
@@ -105,7 +106,7 @@ class _Header extends StatelessWidget {
               Text(
                 coin.name,
                 style: CryptoPlatformTextStyle.britanicaBold.size14
-                    .copyWith(color: coin.textColor),
+                    .copyWith(color: coin.favoriteCoinTextColor),
                 overflow: TextOverflow.fade,
                 softWrap: false,
                 maxLines: 1,
@@ -114,7 +115,7 @@ class _Header extends StatelessWidget {
               Text(
                 coin.ticker,
                 style: CryptoPlatformTextStyle.britanicaRegular.size12
-                    .copyWith(color: coin.textColor),
+                    .copyWith(color: coin.favoriteCoinTextColor),
               ),
             ],
           ),

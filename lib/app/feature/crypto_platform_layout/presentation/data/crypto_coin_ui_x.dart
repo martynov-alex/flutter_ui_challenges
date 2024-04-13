@@ -22,7 +22,7 @@ extension CryptoCoinUIX on CryptoCoin {
         CryptoCoin.ripple => CryptoPlatformColorTheme.secondaryColor,
       };
 
-  Color get textColor => switch (this) {
+  Color get favoriteCoinTextColor => switch (this) {
         CryptoCoin.binanceCoin => CryptoPlatformColorTheme.onTertiaryColor,
         CryptoCoin.bitcoin => CryptoPlatformColorTheme.onPrimaryColor,
         CryptoCoin.dash => CryptoPlatformColorTheme.onTertiaryColor,
@@ -31,12 +31,13 @@ extension CryptoCoinUIX on CryptoCoin {
         CryptoCoin.ripple => CryptoPlatformColorTheme.onSecondaryColor,
       };
 
-  Color get chartColor => switch (this) {
+  Color get favoriteCoinChartLineColor => switch (this) {
         CryptoCoin.binanceCoin => CryptoPlatformColorTheme.onTertiaryColor,
         CryptoCoin.bitcoin => CryptoPlatformColorTheme.onPrimaryColor,
         CryptoCoin.dash => CryptoPlatformColorTheme.onTertiaryColor,
         CryptoCoin.dogecoin => CryptoPlatformColorTheme.onSecondaryColor,
-        CryptoCoin.ethereum => CryptoPlatformColorTheme.positiveIndexColor,
+        CryptoCoin.ethereum =>
+          CryptoPlatformColorTheme.positiveIndexBackgroundColor,
         CryptoCoin.ripple => CryptoPlatformColorTheme.onSecondaryColor,
       };
 }

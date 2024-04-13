@@ -5,7 +5,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_challenges/app/common/constants/app_sizes.dart';
 import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/domain/crypto_coin.dart';
-import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/presentation/widgets/crypto_coin_widget.dart';
+import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/presentation/widgets/crypto_favorite_coin_widget.dart';
 import 'package:flutter_ui_challenges/core/localization/string_hardcoded.dart';
 
 /// Экран для проверки отображения различных вариаций виджетов.
@@ -47,7 +47,7 @@ class _CryptoCoinWidgets extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: Sizes.p8),
         children: [
-          CryptoCoinWidget(
+          CryptoFavoriteCoinWidget(
             coin: CryptoCoin.bitcoin,
             chartData: _generateChatData(),
             price: Decimal.parse('19384'),
@@ -55,7 +55,7 @@ class _CryptoCoinWidgets extends StatelessWidget {
             width: Sizes.p160,
           ),
           gapW8,
-          CryptoCoinWidget(
+          CryptoFavoriteCoinWidget(
             coin: CryptoCoin.ripple,
             chartData: _generateChatData(),
             price: Decimal.parse('384.23'),
@@ -63,7 +63,7 @@ class _CryptoCoinWidgets extends StatelessWidget {
             width: Sizes.p160,
           ),
           gapW8,
-          CryptoCoinWidget(
+          CryptoFavoriteCoinWidget(
             coin: CryptoCoin.binanceCoin,
             chartData: _generateChatData(),
             price: Decimal.parse('4.2333'),
@@ -71,7 +71,7 @@ class _CryptoCoinWidgets extends StatelessWidget {
             width: Sizes.p160,
           ),
           gapW8,
-          CryptoCoinWidget(
+          CryptoFavoriteCoinWidget(
             coin: CryptoCoin.ethereum,
             chartData: _generateChatData(),
             price: Decimal.parse('1938.23'),

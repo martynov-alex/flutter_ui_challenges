@@ -13,12 +13,14 @@ class CryptoIndexChangeWidget extends StatelessWidget {
     final uiData = switch (indexChange) {
       < 0 => (
           icon: const _ArrowIcon(_IndexChangeType.negative),
-          backgroundColor: CryptoPlatformColorTheme.negativeIndexColor,
+          backgroundColor:
+              CryptoPlatformColorTheme.negativeIndexBackgroundColor,
           sign: '-'
         ),
       _ => (
           icon: const _ArrowIcon(_IndexChangeType.positive),
-          backgroundColor: CryptoPlatformColorTheme.positiveIndexColor,
+          backgroundColor:
+              CryptoPlatformColorTheme.positiveIndexBackgroundColor,
           sign: '+'
         ),
     };
@@ -39,7 +41,7 @@ class CryptoIndexChangeWidget extends StatelessWidget {
             Text(
               '${uiData.sign}${indexChange.abs().toStringAsFixed(1)}%',
               style: CryptoPlatformTextStyle.britanicaBold.size12
-                  .copyWith(color: CryptoPlatformColorTheme.onIndexColor),
+                  .copyWith(color: CryptoPlatformColorTheme.indexTextColor),
             ),
             gapW4,
           ],
@@ -66,7 +68,7 @@ class _ArrowIcon extends StatelessWidget {
       child: const Icon(
         Icons.arrow_outward,
         size: Sizes.p16,
-        color: CryptoPlatformColorTheme.onIndexColor,
+        color: CryptoPlatformColorTheme.indexTextColor,
       ),
     );
   }
