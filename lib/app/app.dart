@@ -14,6 +14,11 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final goRouter = ref.watch(goRouterProvider);
     final settingsController = ref.watch(settingsScreenControllerProvider);
+    final colorScheme = ColorScheme.fromSeed(seedColor: Colors.greenAccent);
+    final colorSchemeDark = ColorScheme.fromSeed(
+      seedColor: Colors.greenAccent,
+      brightness: Brightness.dark,
+    );
 
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
@@ -49,14 +54,31 @@ class MyApp extends ConsumerWidget {
       // preferred ThemeMode (light, dark, or system default) from the
       // SettingsController to display the correct theme.
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.greenAccent,
+        colorScheme: colorScheme,
+        expansionTileTheme: ExpansionTileThemeData(
+          backgroundColor: colorScheme.secondaryContainer,
+          collapsedBackgroundColor: colorScheme.background,
+          shape: Border(
+            bottom: BorderSide(
+              color: colorScheme.secondary,
+              width: 2.0,
+            ),
+          ),
+          collapsedShape: const Border(),
         ),
       ),
       darkTheme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.greenAccent,
-          brightness: Brightness.dark,
+        colorScheme: colorSchemeDark,
+        expansionTileTheme: ExpansionTileThemeData(
+          backgroundColor: colorSchemeDark.secondaryContainer,
+          collapsedBackgroundColor: colorSchemeDark.background,
+          shape: Border(
+            bottom: BorderSide(
+              color: colorScheme.secondary,
+              width: 2.0,
+            ),
+          ),
+          collapsedShape: const Border(),
         ),
       ),
       themeMode: settingsController.value,
