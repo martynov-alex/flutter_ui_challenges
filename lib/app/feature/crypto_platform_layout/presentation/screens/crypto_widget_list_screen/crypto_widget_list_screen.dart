@@ -5,6 +5,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_challenges/app/common/constants/app_sizes.dart';
 import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/domain/crypto_coin.dart';
+import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/presentation/widgets/crypto_chart_widget.dart';
 import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/presentation/widgets/crypto_favorite_coin_widget.dart';
 import 'package:flutter_ui_challenges/core/localization/string_hardcoded.dart';
 
@@ -20,24 +21,17 @@ class CryptoWidgetListScreen extends StatelessWidget {
       ),
       body: const Column(
         children: [
-          _CryptoCoinWidgets(),
+          _CryptoFavoriteCoinWidgets(),
+          gapH4,
+          _CryptoChartWidget(),
         ],
       ),
     );
   }
 }
 
-class _CryptoCoinWidgets extends StatelessWidget {
-  const _CryptoCoinWidgets();
-
-  List<FlSpot> _generateChatData() {
-    final random = Random();
-    final List<FlSpot> spots = List.generate(
-      10,
-      (index) => FlSpot(index.toDouble(), random.nextInt(10).toDouble()),
-    );
-    return spots;
-  }
+class _CryptoFavoriteCoinWidgets extends StatelessWidget {
+  const _CryptoFavoriteCoinWidgets();
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +43,7 @@ class _CryptoCoinWidgets extends StatelessWidget {
         children: [
           CryptoFavoriteCoinWidget(
             coin: CryptoCoin.bitcoin,
-            chartData: _generateChatData(),
+            chartData: _generateChatData(initialY: 19000),
             price: Decimal.parse('19384'),
             indexChangePerDay: 1.4,
             width: Sizes.p160,
@@ -57,7 +51,7 @@ class _CryptoCoinWidgets extends StatelessWidget {
           gapW8,
           CryptoFavoriteCoinWidget(
             coin: CryptoCoin.ripple,
-            chartData: _generateChatData(),
+            chartData: _generateChatData(initialY: 380),
             price: Decimal.parse('384.23'),
             indexChangePerDay: 8.3,
             width: Sizes.p160,
@@ -65,7 +59,7 @@ class _CryptoCoinWidgets extends StatelessWidget {
           gapW8,
           CryptoFavoriteCoinWidget(
             coin: CryptoCoin.binanceCoin,
-            chartData: _generateChatData(),
+            chartData: _generateChatData(initialY: 4),
             price: Decimal.parse('4.2333'),
             indexChangePerDay: -231.2,
             width: Sizes.p160,
@@ -73,7 +67,7 @@ class _CryptoCoinWidgets extends StatelessWidget {
           gapW8,
           CryptoFavoriteCoinWidget(
             coin: CryptoCoin.ethereum,
-            chartData: _generateChatData(),
+            chartData: _generateChatData(initialY: 1900),
             price: Decimal.parse('1938.23'),
             indexChangePerDay: -2.2,
             width: Sizes.p160,
@@ -82,4 +76,51 @@ class _CryptoCoinWidgets extends StatelessWidget {
       ),
     );
   }
+}
+
+class _CryptoChartWidget extends StatelessWidget {
+  const _CryptoChartWidget();
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: Sizes.p4),
+      child: CryptoChartWidget(
+        coin: CryptoCoin.bitcoin,
+        chartData: _generateChatData(initialY: 19000, spotsNumber: 100),
+        price: Decimal.parse('19384'),
+        indexChangePerDay: 1.4,
+        height: 300,
+      ),
+    );
+  }
+}
+
+List<FlSpot> _generateChatData({
+  required double initialY,
+  int spotsNumber = 30,
+}) {
+  final random = Random();
+  final isGrowing = random.nextBool();
+  double y = initialY;
+  final step = initialY * 0.01;
+
+  final List<FlSpot> spots = List.generate(
+    spotsNumber,
+    (index) {
+      final x = index.toDouble();
+      final change = random.nextDouble() * step;
+
+      random.nextInt(10) > 2
+          ? isGrowing
+              ? y += change
+              : y -= change
+          : isGrowing
+              ? y -= change
+              : y += change;
+
+      return FlSpot(x, y);
+    },
+  );
+  return spots;
 }

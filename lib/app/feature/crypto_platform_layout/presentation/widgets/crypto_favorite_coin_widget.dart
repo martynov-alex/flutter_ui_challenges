@@ -33,8 +33,7 @@ class CryptoFavoriteCoinWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final backgroundColor = coin.backgroundColor;
-    final textColor = coin.favoriteCoinTextColor;
-    final chartColor = coin.favoriteCoinChartLineColor;
+    final textColor = coin.textColor;
 
     return SizedBox(
       height: height,
@@ -53,10 +52,7 @@ class CryptoFavoriteCoinWidget extends StatelessWidget {
               _Header(coin),
               gapH8,
               Expanded(
-                child: _Chart(
-                  chartData: chartData,
-                  chartColor: chartColor,
-                ),
+                child: _Chart(chartData, coin.chartLineColor),
               ),
               gapH8,
               Text(
@@ -92,8 +88,7 @@ class _Header extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.all(Sizes.p8),
-              child:
-                  SvgIcon(asset: coin.icon, color: coin.favoriteCoinTextColor),
+              child: SvgIcon(asset: coin.icon, color: coin.textColor),
             ),
           ),
         ),
@@ -106,7 +101,7 @@ class _Header extends StatelessWidget {
               Text(
                 coin.name,
                 style: CryptoPlatformTextStyle.britanicaBold.size14
-                    .copyWith(color: coin.favoriteCoinTextColor),
+                    .copyWith(color: coin.textColor),
                 overflow: TextOverflow.fade,
                 softWrap: false,
                 maxLines: 1,
@@ -115,7 +110,7 @@ class _Header extends StatelessWidget {
               Text(
                 coin.ticker,
                 style: CryptoPlatformTextStyle.britanicaRegular.size12
-                    .copyWith(color: coin.favoriteCoinTextColor),
+                    .copyWith(color: coin.textColor),
               ),
             ],
           ),
@@ -126,7 +121,7 @@ class _Header extends StatelessWidget {
 }
 
 class _Chart extends StatelessWidget {
-  const _Chart({required this.chartData, required this.chartColor});
+  const _Chart(this.chartData, this.chartColor);
 
   final List<FlSpot> chartData;
   final Color chartColor;
