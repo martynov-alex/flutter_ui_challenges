@@ -128,7 +128,6 @@ class _Chart extends StatelessWidget {
           LineChartBarData(
             spots: chartData,
             color: CryptoPlatformColorTheme.onQuinaryColor,
-            isCurved: true,
             dotData: const FlDotData(show: false),
           ),
         ],
@@ -143,8 +142,8 @@ class _Chart extends StatelessWidget {
                 .map(
                   (spot) => LineTooltipItem(
                     Decimal.parse(spot.y.toString()).format(),
-                    CryptoPlatformTextStyle.britanicaBlack.size16.copyWith(
-                      color: CryptoPlatformColorTheme.onQuinaryColor,
+                    CryptoPlatformTextStyle.britanicaBlack.size14.copyWith(
+                      color: coin.textColor,
                     ),
                   ),
                 )

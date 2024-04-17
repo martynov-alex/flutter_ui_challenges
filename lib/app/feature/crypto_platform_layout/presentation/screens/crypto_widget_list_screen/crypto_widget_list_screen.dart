@@ -86,9 +86,9 @@ class _CryptoChartWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: Sizes.p4),
       child: CryptoChartWidget(
-        coin: CryptoCoin.bitcoin,
-        chartData: _generateChatData(initialY: 19000, spotsNumber: 100),
-        price: Decimal.parse('19384'),
+        coin: CryptoCoin.dash,
+        chartData: _generateChatData(initialY: 40, spotsNumber: 50),
+        price: Decimal.parse('40.86'),
         indexChangePerDay: 1.4,
         height: 300,
       ),

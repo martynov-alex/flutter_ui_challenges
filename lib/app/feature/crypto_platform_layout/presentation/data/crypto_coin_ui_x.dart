@@ -16,7 +16,7 @@ extension CryptoCoinUIX on CryptoCoin {
   Color get backgroundColor => switch (this) {
         CryptoCoin.binanceCoin => CryptoPlatformColorTheme.tertiaryColor,
         CryptoCoin.bitcoin => CryptoPlatformColorTheme.primaryColor,
-        CryptoCoin.dash => CryptoPlatformColorTheme.tertiaryColor,
+        CryptoCoin.dash => CryptoPlatformColorTheme.secondaryColor,
         CryptoCoin.dogecoin => CryptoPlatformColorTheme.secondaryColor,
         CryptoCoin.ethereum => CryptoPlatformColorTheme.quinaryColor,
         CryptoCoin.ripple => CryptoPlatformColorTheme.secondaryColor,
@@ -25,7 +25,7 @@ extension CryptoCoinUIX on CryptoCoin {
   Color get textColor => switch (this) {
         CryptoCoin.binanceCoin => CryptoPlatformColorTheme.onTertiaryColor,
         CryptoCoin.bitcoin => CryptoPlatformColorTheme.onPrimaryColor,
-        CryptoCoin.dash => CryptoPlatformColorTheme.onTertiaryColor,
+        CryptoCoin.dash => CryptoPlatformColorTheme.onSecondaryColor,
         CryptoCoin.dogecoin => CryptoPlatformColorTheme.onSecondaryColor,
         CryptoCoin.ethereum => CryptoPlatformColorTheme.onQuinaryColor,
         CryptoCoin.ripple => CryptoPlatformColorTheme.onSecondaryColor,

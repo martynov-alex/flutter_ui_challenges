@@ -8,7 +8,7 @@ extension DecimalX on Decimal {
 
   String format([String? locale]) {
     final decimalDigits = switch (toDouble()) {
-      < 100 => 4,
+      < 10 => 4,
       < 10000 => 2,
       _ => 0,
     };
