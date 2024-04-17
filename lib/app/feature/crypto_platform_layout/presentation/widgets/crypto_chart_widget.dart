@@ -101,7 +101,7 @@ class _Header extends StatelessWidget {
               gapW4,
               Text(
                 price.format(),
-                style: CryptoPlatformTextStyle.britanicaRegular.size12
+                style: CryptoPlatformTextStyle.britanicaBlack.size12
                     .copyWith(color: CryptoPlatformColorTheme.onQuinaryColor),
               ),
             ],
@@ -128,7 +128,6 @@ class _Chart extends StatelessWidget {
           LineChartBarData(
             spots: chartData,
             color: CryptoPlatformColorTheme.onQuinaryColor,
-            barWidth: 1,
             isCurved: true,
             dotData: const FlDotData(show: false),
           ),
@@ -144,7 +143,7 @@ class _Chart extends StatelessWidget {
                 .map(
                   (spot) => LineTooltipItem(
                     Decimal.parse(spot.y.toString()).format(),
-                    CryptoPlatformTextStyle.britanicaExtraBold.size12.copyWith(
+                    CryptoPlatformTextStyle.britanicaBlack.size16.copyWith(
                       color: CryptoPlatformColorTheme.onQuinaryColor,
                     ),
                   ),
@@ -209,7 +208,7 @@ class _PeriodSwitcherState extends State<_PeriodSwitcher> {
                 _Period.values[index].title,
                 maxLines: 1,
                 overflow: TextOverflow.fade,
-                style: CryptoPlatformTextStyle.britanicaExpandedRegular.size11
+                style: CryptoPlatformTextStyle.britanicaExpandedRegular.size12
                     .copyWith(
                   color: index == selectedButtonIndex
                       ? CryptoPlatformColorTheme.quinaryColor

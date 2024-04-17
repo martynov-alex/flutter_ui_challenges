@@ -99,6 +99,11 @@ class _BritanicaBlack {
     fontWeight: FontWeight.w900,
     fontSize: 14.0,
   );
+  TextStyle size16 = const TextStyle(
+    fontFamily: _britanicaFontFamily,
+    fontWeight: FontWeight.w900,
+    fontSize: 16.0,
+  );
 }
 
 class _BritanicaSemiExpandedRegular {
