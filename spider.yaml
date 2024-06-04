@@ -39,3 +39,6 @@ groups:
   - path: assets/vectors/cryptocurrency
     class_name: CryptocurrencyIcons
     types: [ .svg ]
+  - path: assets/vectors/news
+    class_name: NewsSourceLogos
+    types: [ .svg ]
