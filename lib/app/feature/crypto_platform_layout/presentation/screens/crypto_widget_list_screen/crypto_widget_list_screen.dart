@@ -5,8 +5,10 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_challenges/app/common/constants/app_sizes.dart';
 import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/domain/crypto_coin.dart';
+import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/domain/crypto_news.dart';
 import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/presentation/widgets/crypto_chart_widget.dart';
 import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/presentation/widgets/crypto_favorite_coin_widget.dart';
+import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/presentation/widgets/crypto_news_widget.dart';
 import 'package:flutter_ui_challenges/core/localization/string_hardcoded.dart';
 
 /// Экран для проверки отображения различных вариаций виджетов.
@@ -19,11 +21,13 @@ class CryptoWidgetListScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Crypto Widget List'.hardcoded),
       ),
-      body: const Column(
-        children: [
+      body: ListView(
+        children: const [
           _CryptoFavoriteCoinWidgets(),
           gapH4,
           _CryptoChartWidget(),
+          gapH4,
+          _CryptoNewsWidget(),
         ],
       ),
     );
@@ -90,6 +94,34 @@ class _CryptoChartWidget extends StatelessWidget {
         chartData: _generateChatData(initialY: 40, spotsNumber: 50),
         price: Decimal.parse('40.86'),
         indexChangePerDay: 1.4,
+        height: 300,
+      ),
+    );
+  }
+}
+
+class _CryptoNewsWidget extends StatelessWidget {
+  const _CryptoNewsWidget();
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: Sizes.p4),
+      child: CryptoNewsWidget(
+        firstNews: CryptoNews(
+          title: 'Bitcoin price hits new all-time high',
+          source: NewsSource.cnbc,
+          imageUrl: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
+          publishedAt: DateTime.now(),
+          commentsNumber: 23,
+        ),
+        secondNews: CryptoNews(
+          title: 'Bitcoin price hits new all-time high',
+          source: NewsSource.cnn,
+          imageUrl: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png',
+          publishedAt: DateTime.now(),
+          commentsNumber: 23,
+        ),
         height: 300,
       ),
     );

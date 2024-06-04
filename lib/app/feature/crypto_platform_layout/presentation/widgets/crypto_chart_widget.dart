@@ -39,7 +39,12 @@ class CryptoChartWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(Sizes.p24),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(Sizes.p16),
+          padding: const EdgeInsets.only(
+            top: Sizes.p24,
+            left: Sizes.p24,
+            right: Sizes.p24,
+            bottom: Sizes.p16,
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -129,6 +134,7 @@ class _Chart extends StatelessWidget {
             spots: chartData,
             color: CryptoPlatformColorTheme.onQuinaryColor,
             dotData: const FlDotData(show: false),
+            isCurved: true,
           ),
         ],
         titlesData: const FlTitlesData(show: false),
@@ -182,42 +188,39 @@ class _PeriodSwitcherState extends State<_PeriodSwitcher> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: List.generate(
-          _Period.values.length,
-          (index) => Expanded(
-            child: FilledButton(
-              onPressed: () => setState(() => selectedButtonIndex = index),
-              style: ButtonStyle(
-                padding: MaterialStateProperty.all(
-                  const EdgeInsets.symmetric(
-                    vertical: Sizes.p12,
-                  ),
+    return Row(
+      children: List.generate(
+        _Period.values.length,
+        (index) => Expanded(
+          child: FilledButton(
+            onPressed: () => setState(() => selectedButtonIndex = index),
+            style: ButtonStyle(
+              padding: MaterialStateProperty.all(
+                const EdgeInsets.symmetric(
+                  vertical: Sizes.p8,
                 ),
-                backgroundColor: MaterialStateProperty.all(
-                  index == selectedButtonIndex
-                      ? CryptoPlatformColorTheme.onQuinaryColor
-                      : CryptoPlatformColorTheme.quinaryColor,
-                ),
-                minimumSize: MaterialStateProperty.all(Size.zero),
               ),
-              child: Text(
-                _Period.values[index].title,
-                maxLines: 1,
-                overflow: TextOverflow.fade,
-                style: CryptoPlatformTextStyle.britanicaExpandedRegular.size12
-                    .copyWith(
-                  color: index == selectedButtonIndex
-                      ? CryptoPlatformColorTheme.quinaryColor
-                      : CryptoPlatformColorTheme.onQuinaryColor,
-                ),
+              backgroundColor: MaterialStateProperty.all(
+                index == selectedButtonIndex
+                    ? CryptoPlatformColorTheme.onQuinaryColor
+                    : CryptoPlatformColorTheme.quinaryColor,
+              ),
+              minimumSize: MaterialStateProperty.all(Size.zero),
+            ),
+            child: Text(
+              _Period.values[index].title,
+              maxLines: 1,
+              overflow: TextOverflow.fade,
+              style: CryptoPlatformTextStyle.britanicaExpandedRegular.size12
+                  .copyWith(
+                color: index == selectedButtonIndex
+                    ? CryptoPlatformColorTheme.quinaryColor
+                    : CryptoPlatformColorTheme.onQuinaryColor,
               ),
             ),
           ),
-        ).toList(),
-      ),
+        ),
+      ).toList(),
     );
   }
 }

@@ -63,6 +63,11 @@ class _BritanicaRegular {
 }
 
 class _BritanicaBold {
+  TextStyle size10 = const TextStyle(
+    fontFamily: _britanicaFontFamily,
+    fontWeight: FontWeight.w700,
+    fontSize: 10.0,
+  );
   TextStyle size12 = const TextStyle(
     fontFamily: _britanicaFontFamily,
     fontWeight: FontWeight.w700,
@@ -157,6 +162,12 @@ class _BritanicaExpandedBold {
     fontFamily: _britanicaExpandedFontFamily,
     fontWeight: FontWeight.w700,
     fontSize: 12.0,
+  );
+
+  TextStyle size14 = const TextStyle(
+    fontFamily: _britanicaExpandedFontFamily,
+    fontWeight: FontWeight.w700,
+    fontSize: 14.0,
   );
 
   TextStyle size20 = const TextStyle(
