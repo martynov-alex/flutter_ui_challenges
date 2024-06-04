@@ -3,11 +3,14 @@ import 'package:decimal/intl.dart';
 import 'package:intl/intl.dart';
 
 extension DecimalX on Decimal {
-  String formatWith(NumberFormat formatter) =>
-      formatter.format(DecimalIntl(this));
+  String formatWith(NumberFormat formatter) {
+    final decimalFormatter = DecimalFormatter(formatter);
+    return decimalFormatter.format(this);
+  }
 
   String format([String? locale]) {
     final decimalDigits = switch (toDouble()) {
+      < 1 => 7,
       < 10 => 4,
       < 10000 => 2,
       _ => 0,
@@ -18,6 +21,8 @@ extension DecimalX on Decimal {
       decimalDigits: decimalDigits,
     );
 
-    return formatter.format(DecimalIntl(this));
+    final decimalFormatter = DecimalFormatter(formatter);
+
+    return decimalFormatter.format(this);
   }
 }
