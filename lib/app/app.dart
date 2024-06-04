@@ -57,7 +57,7 @@ class MyApp extends ConsumerWidget {
         colorScheme: colorScheme,
         expansionTileTheme: ExpansionTileThemeData(
           backgroundColor: colorScheme.secondaryContainer,
-          collapsedBackgroundColor: colorScheme.background,
+          collapsedBackgroundColor: colorScheme.surface,
           shape: Border(
             bottom: BorderSide(
               color: colorScheme.secondary,
@@ -71,7 +71,7 @@ class MyApp extends ConsumerWidget {
         colorScheme: colorSchemeDark,
         expansionTileTheme: ExpansionTileThemeData(
           backgroundColor: colorSchemeDark.secondaryContainer,
-          collapsedBackgroundColor: colorSchemeDark.background,
+          collapsedBackgroundColor: colorSchemeDark.surface,
           shape: Border(
             bottom: BorderSide(
               color: colorScheme.secondary,

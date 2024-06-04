@@ -195,17 +195,17 @@ class _PeriodSwitcherState extends State<_PeriodSwitcher> {
           child: FilledButton(
             onPressed: () => setState(() => selectedButtonIndex = index),
             style: ButtonStyle(
-              padding: MaterialStateProperty.all(
+              padding: WidgetStateProperty.all(
                 const EdgeInsets.symmetric(
                   vertical: Sizes.p8,
                 ),
               ),
-              backgroundColor: MaterialStateProperty.all(
+              backgroundColor: WidgetStateProperty.all(
                 index == selectedButtonIndex
                     ? CryptoPlatformColorTheme.onQuinaryColor
                     : CryptoPlatformColorTheme.quinaryColor,
               ),
-              minimumSize: MaterialStateProperty.all(Size.zero),
+              minimumSize: WidgetStateProperty.all(Size.zero),
             ),
             child: Text(
               _Period.values[index].title,
