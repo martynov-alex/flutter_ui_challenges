@@ -33,14 +33,19 @@ groups:
   - path: assets/images
     class_name: AppImages
     types: [ .png, .jpg, .jpeg, .webp, .webm, .bmp ]
+  - path: assets/vectors
+    class_name: AppVectors
+    types: [ .svg ]
 
-# UI challenges assets
-  - paths:
-      - assets/challenges/crypto_platform_layout
-      - assets/challenges/crypto_platform_layout/cryptocurrency
-      - assets/challenges/crypto_platform_layout/news
-    class_name: CryptoPlatformLayoutAssets
-    types: [ .svg, .png, .jpg, .jpeg ]
-  - path: assets/challenges/twitter_embed_card
-    class_name: TwitterEmbedCardAssets
-    types: [ .svg, .png, .jpg, .jpeg ]
+  # UI challenges images
+  - path: assets/images/twitter_embed_card
+    class_name: TwitterEmbedCardImages
+    types: [ .png, .jpg, .jpeg ]
+
+  # UI challenges vectors
+  - path: assets/vectors/crypto_platform_layout
+    class_name: CryptoPlatformLayoutVectors
+    types: [ .svg ]
+  - path: assets/vectors/twitter_embed_card
+    class_name: TwitterEmbedCardVectors
+    types: [ .svg ]

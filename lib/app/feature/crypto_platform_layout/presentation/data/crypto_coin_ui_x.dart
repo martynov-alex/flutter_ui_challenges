@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/domain/crypto_coin.dart';
 import 'package:flutter_ui_challenges/app/feature/crypto_platform_layout/presentation/theme/crypto_platform_color_theme.dart';
-import 'package:flutter_ui_challenges/core/assets/crypto_platform_layout_assets.dart';
+import 'package:flutter_ui_challenges/core/assets/crypto_platform_layout_vectors.dart';
 
 extension CryptoCoinUIX on CryptoCoin {
   String get icon => switch (this) {
-        CryptoCoin.binanceCoin => CryptoPlatformLayoutAssets.bnb,
-        CryptoCoin.bitcoin => CryptoPlatformLayoutAssets.btc,
-        CryptoCoin.dash => CryptoPlatformLayoutAssets.dash,
-        CryptoCoin.dogecoin => CryptoPlatformLayoutAssets.doge,
-        CryptoCoin.ethereum => CryptoPlatformLayoutAssets.eth,
-        CryptoCoin.ripple => CryptoPlatformLayoutAssets.xrp,
+        CryptoCoin.binanceCoin => CryptoPlatformLayoutVectors.iconBnb,
+        CryptoCoin.bitcoin => CryptoPlatformLayoutVectors.iconBtc,
+        CryptoCoin.dash => CryptoPlatformLayoutVectors.iconDash,
+        CryptoCoin.dogecoin => CryptoPlatformLayoutVectors.iconDoge,
+        CryptoCoin.ethereum => CryptoPlatformLayoutVectors.iconEth,
+        CryptoCoin.ripple => CryptoPlatformLayoutVectors.iconXrp,
       };
 
   Color get backgroundColor => switch (this) {
