@@ -1,4 +1,4 @@
-import 'package:flutter_ui_challenges/core/assets/news_source_logos.dart';
+import 'package:flutter_ui_challenges/core/assets/crypto_platform_layout_assets.dart';
 
 class CryptoNews {
   final String title;
@@ -17,8 +17,8 @@ class CryptoNews {
 }
 
 enum NewsSource {
-  cnbc('CNBC', NewsSourceLogos.cnbc),
-  cnn('CNN International', NewsSourceLogos.cnn),
+  cnbc('CNBC', CryptoPlatformLayoutAssets.cnbc),
+  cnn('CNN International', CryptoPlatformLayoutAssets.cnn),
   ;
 
   const NewsSource(this.name, this.logoAsset);
