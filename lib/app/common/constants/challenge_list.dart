@@ -17,4 +17,9 @@ final codeWithAndreaChallengeList = <ChallengeInfo>[
     icon: Icons.comment,
     route: AppRoute.twitterEmbedCard.name,
   ),
+  ChallengeInfo(
+    title: 'Pushable 3D Button'.hardcoded,
+    icon: Icons.smart_button,
+    route: AppRoute.pushable3DButton.name,
+  ),
 ];

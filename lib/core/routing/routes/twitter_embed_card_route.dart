@@ -5,5 +5,5 @@ import 'package:go_router/go_router.dart';
 final twitterEmbedCardRoute = GoRoute(
   path: AppRoute.twitterEmbedCard.path,
   name: AppRoute.twitterEmbedCard.name,
-  builder: (context, state) => const TwitterEmbedCardScreen(),
+  builder: (_, __) => const TwitterEmbedCardScreen(),
 );

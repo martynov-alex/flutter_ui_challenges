@@ -5,5 +5,5 @@ import 'package:go_router/go_router.dart';
 final settingsRoute = GoRoute(
   path: AppRoute.settings.path,
   name: AppRoute.settings.name,
-  builder: (context, state) => const SettingsScreen(),
+  builder: (_, __) => const SettingsScreen(),
 );
