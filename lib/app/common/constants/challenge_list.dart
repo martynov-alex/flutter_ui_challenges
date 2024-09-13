@@ -27,4 +27,9 @@ final codeWithAndreaChallengeList = <ChallengeInfo>[
     icon: Icons.timelapse_outlined,
     route: AppRoute.radialCountdownTimer.name,
   ),
+  ChallengeInfo(
+    title: 'Interactive Page Flip'.hardcoded,
+    icon: Icons.flip_outlined,
+    route: AppRoute.interactivePageFlip.name,
+  ),
 ];

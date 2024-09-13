@@ -49,3 +49,6 @@ groups:
   - path: assets/vectors/twitter_embed_card
     class_name: TwitterEmbedCardVectors
     types: [ .svg ]
+  - path: assets/vectors/interactive_page_flip
+    class_name: InteractivePageFlipVectors
+    types: [ .svg ]

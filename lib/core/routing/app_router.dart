@@ -12,6 +12,7 @@ enum AppRoute {
   twitterEmbedCard('twitter_embed_card'),
   pushable3DButton('pushable_3d_button'),
   radialCountdownTimer('radial_countdown_timer'),
+  interactivePageFlip('interactive_page_flip'),
   ;
 
   const AppRoute(this.path);
@@ -34,6 +35,7 @@ GoRouter goRouter(GoRouterRef ref) {
           twitterEmbedCardRoute,
           pushable3DButtonRoute,
           radialCountdownTimerRoute,
+          interactivePageFlipRoute,
         ],
       ),
     ],

@@ -8,7 +8,7 @@ class Pushable3DButtonScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Twitter Embed Card'.hardcoded),
+        title: Text('Pushable 3D Button'.hardcoded),
       ),
       body: const Padding(
         padding: EdgeInsets.all(16.0),

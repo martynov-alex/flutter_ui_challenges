@@ -48,6 +48,9 @@ flutter:
     - path: assets/vectors/twitter_embed_card/
       transformers:
         - package: vector_graphics_compiler
+    - path: assets/vectors/interactive_page_flip/
+      transformers:
+        - package: vector_graphics_compiler
 
   fonts:
     - family: Britanica
