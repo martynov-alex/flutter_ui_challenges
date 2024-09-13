@@ -1,8 +1,5 @@
 import 'package:flutter_ui_challenges/app/feature/challenges/presentation/examples_screen/challenges_screen.dart';
-import 'package:flutter_ui_challenges/core/routing/routes/crypto_platform_route.dart';
-import 'package:flutter_ui_challenges/core/routing/routes/pushable_3d_button_route.dart';
-import 'package:flutter_ui_challenges/core/routing/routes/settings_route.dart';
-import 'package:flutter_ui_challenges/core/routing/routes/twitter_embed_card_route.dart';
+import 'package:flutter_ui_challenges/core/routing/routes/routes.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -14,6 +11,7 @@ enum AppRoute {
   cryptoPlatform('crypto_platform'),
   twitterEmbedCard('twitter_embed_card'),
   pushable3DButton('pushable_3d_button'),
+  radialCountdownTimer('radial_countdown_timer'),
   ;
 
   const AppRoute(this.path);
@@ -35,6 +33,7 @@ GoRouter goRouter(GoRouterRef ref) {
           cryptoPlatformRoute,
           twitterEmbedCardRoute,
           pushable3DButtonRoute,
+          radialCountdownTimerRoute,
         ],
       ),
     ],

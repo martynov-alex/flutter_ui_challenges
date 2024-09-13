@@ -22,4 +22,9 @@ final codeWithAndreaChallengeList = <ChallengeInfo>[
     icon: Icons.smart_button,
     route: AppRoute.pushable3DButton.name,
   ),
+  ChallengeInfo(
+    title: 'Radial Countdown Timer'.hardcoded,
+    icon: Icons.timelapse_outlined,
+    route: AppRoute.radialCountdownTimer.name,
+  ),
 ];
